@@ -1,2 +1,2 @@
 # Solaria
-Landing page para servidor de Minecraft
+Hola Vienvenido a nuestro servidor 
