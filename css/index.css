@@ -1,0 +1,104 @@
+/********************************************
+ *    Property of Alberto Montiel Reyes     *
+ *       All rights reserved © 2023         *
+ *    Any modifications at this file and    * 
+ *      others ones must be aproved and     *
+ *    concend by the author, forks are not  *
+ * allowed, contact me for more information *
+ *                                          *
+ ********************************************/
+
+
+*{ /*En esta seccion van todas las variables de estilizado gobales, se aplicaran a cualquier elemento que se cree en el futuro*/
+    font-size: 62.5%;
+    list-style: none;
+    text-decoration: none;
+}
+
+html { /*En esta seccion es el estilizado del documento html, todo lo que compone la pagina, a diferencia del componente * que es global, html tiene mayor prioridad*/
+    color-scheme: dark;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a { /*Estilizado de todos los componentes tipo hipervinculos, al igual que html, reemplazara todo el estilizado del componente global*/
+    position: relative;
+    color: inherit;
+    text-transform: uppercase;
+    opacity: .7;
+    font-weight: 500;
+}
+
+body { /*Estos son los estilos que se aplicaran unicamente a los elementos dentro del body, es decir, cualquier elemento fuera de body no se vera afectado por estos estilos*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 19rem;
+}
+
+header { /*Estilo de la cabecera del sitio web, tiene una pocision relativa sujera a la cima del sitio web*/
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.barraNavPrincipal { /*El elemento de navegacion es relativo al padre*/
+    position: relative;
+    height: inherit;
+}
+
+.barraNavPrincipal ul { /*Esta es la lista con los elementos que se ven en el menu, inicio, acerca de, compras etc, aqui se puede modificar el estilo de esos componentes*/
+    --_gap: 2rem;
+
+    margin: 0;
+    height: min-content;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.barraNavPrincipal li { /*Este es el estilo de cada elemento dentro de la lista a diferencia de ul, li modifica cada elemento por separado; ul aplicaria un efecto global lo podria causar crasheos o bugs visuales*/
+    position: relative;
+    overflow: hidden;
+    padding: calc(var(--_gap) / 2);
+}
+
+.barraNavPrincipal li::after { /*Esta es la barra que aparece debajo de cada elemento, su forma, su color y sus propiedades*/
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0rem;
+    height: 3px;
+    width: 100%;
+    background: plum;
+
+    translate: var(--_translate, 0);
+    scale: var(--_width, 0) 1;
+    transition: 
+        scale 300ms var(--_scale-delay, 0ms),
+        translate 500ms var(--_translate-delay, 0ms);
+}
+
+.barraNavPrincipal li:hover,
+.barraNavPrincipal li:focus-within{ /*Aqui especificamos que queremos hacer cuando un elemento de la lista es apuntado con el cursor, o con el tabulador (EoA)*/
+    --_width: 1;
+}
+
+@supports selector(:has(h1)){ /*Comprobamos que el navegador tenga soporte con el metodo :has para ejecutar las animaciones, en caso de que no lo soporte, se vera un poco extraño las animaciones*/
+    .barraNavPrincipal li:hover + li {
+        --_translate: -100%;
+        --_scale-delay: 300ms;
+        --_translate-delay: 200ms;
+    }
+    .barraNavPrincipal li:has(+ :hover) {
+        --_translate: 100%;
+        --_scale-delay: 300ms;
+        --_translate-delay: 200ms;
+    }
+}
+
+a:hover, a:focus-visible { /*Definimos la opacidad a 1 del elemento que este siendo apuntado, dando un efecto de alumbrado*/
+    opacity: 1;
+}
