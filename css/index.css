@@ -56,13 +56,19 @@ header .logo {
     align-items: center;
     justify-content: space-around;
 }
+
 .logo img {
     width: 50px;
     height: 50px;
 }
+
 .logo span {
     font-weight: 700;
     color: whitesmoke;
+}
+
+.barraNavPrincipal .elementos {
+    visibility: visible;
 }
 
 .barraNavPrincipal { /*El elemento de navegacion es relativo al padre*/
@@ -129,49 +135,7 @@ a:hover, a:focus-visible { /*Definimos la opacidad a 1 del elemento que este sie
 
 /*Estilado del main*/
 
-main {
-    position: relative;
-    top: -59px;
-    left: -9px;
-    width: 100%;
-    z-index: 1;
-}
-main .advertencia {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-}
-.advertencia .fondo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-}
-.advertencia .textoAdvertencia {
-    z-index: 2;
-    font-weight: bold;
-}
+
+
 
 /*Estilado del footer*/
-footer {
-    position: relative;
-    display: flex;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    align-content: flex-start;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-footer p {
-    font-size: small;
-    margin: 0;
-}
