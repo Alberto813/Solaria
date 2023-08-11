@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solaria | servidor para MC Java y Bedrock</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/smartphone.css" media="screen and (min-width: 320px)">
+    <link rel="stylesheet" href="./css/index.css" media="screen and (min-width: 930px)">
 </head>
 <body>
     <header>
@@ -13,7 +14,7 @@
             <span>Solaria</span>
         </div>
         <nav class="barraNavPrincipal">
-            <ul>
+            <ul class="elementos">
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Acerca de</a></li>
                 <li><a href="">Compras</a></li>
@@ -24,9 +25,12 @@
     </header>
     <main>
         <section class="advertencia">
-            <video class="fondo" autoplay loop muted plays-inline>
-                <source src="./assets/videos/bg1.mp4" type="video/mp4">
-            </video>
+            <section class="contenedor-fondo">
+                <video class="fondo" autoplay loop muted plays-inline>
+                    <source src="https://media.githubusercontent.com/media/Alberto813/Solaria/main/assets/videos/bgS1.mp4" type="video/mp4" media="screen and (min-width: 320px)">
+                    <source src="https://media.githubusercontent.com/media/Alberto813/Solaria/main/assets/videos/bg1.mp4" type="video/mp4" media="screen and (min-width: 930px)">
+                </video>
+            </section>
             <p class="textoAdvertencia">SITIO EN CONSTRUCCION!</p>
         </section>
     </main>
