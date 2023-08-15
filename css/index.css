@@ -1,17 +1,29 @@
+html {
+    overflow-x: hidden;
+}
 /*CABECERA*/
 
+.barraNavPrincipal,
 .barraNavPrincipal .elementos {
     visibility: visible;
 }
-
+header .menu {
+    display: none;
+}
 .barraNavPrincipal ul { /*Esta es la lista con los elementos que se ven en el menu, inicio, acerca de, compras etc, aqui se puede modificar el estilo de esos componentes*/
     --_gap: 2rem;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    list-style: none;
+    position: relative;
+    right: calc(6% + 8px);
 }
 .barraNavPrincipal li a {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
 }
 
 .barraNavPrincipal li { /*Este es el estilo de cada elemento dentro de la lista a diferencia de ul, li modifica cada elemento por separado; ul aplicaria un efecto global lo podria causar crasheos o bugs visuales*/
@@ -59,49 +71,5 @@ a:hover, a:focus-visible { /*Definimos la opacidad a 1 del elemento que este sie
 
 /*Estilado del main*/
 
-main {
-    position: relative;
-    top: -59px;
-    left: -9px;
-    width: 100%;
-    z-index: 1;
-}
-main .advertencia {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-}
-.advertencia .fondo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-}
-.advertencia .textoAdvertencia {
-    z-index: 2;
-    font-weight: bold;
-}
 
 /*Estilado del footer*/
-footer {
-    position: relative;
-    display: flex;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    align-content: flex-start;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-footer p {
-    font-size: small;
-    margin: 0;
-}

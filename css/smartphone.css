@@ -8,149 +8,200 @@
  *                                          *
  ********************************************/
 
-*{ /*En esta seccion van todas las variables de estilizado gobales, se aplicaran a cualquier elemento que se cree en el futuro*/
-    font-size: 62.5%;
-    list-style: none;
-    text-decoration: none;
-}
 
-html { /*En esta seccion es el estilizado del documento html, todo lo que compone la pagina, a diferencia del componente * que es global, html tiene mayor prioridad*/
-    color-scheme: dark;
+/**************************************************GLOBAL****************************************************/
+:root {
+    --color-principal: #c579d2;
+    --color-secundario: #792d86;
+    --angulo-degradado: 53deg;
+}
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-a { /*Estilizado de todos los componentes tipo hipervinculos, al igual que html, reemplazara todo el estilizado del componente global*/
-    position: relative;
-    color: inherit;
-    text-transform: uppercase;
-    opacity: .7;
-    font-weight: 500;
-}
-
-body { /*Estos son los estilos que se aplicaran unicamente a los elementos dentro del body, es decir, cualquier elemento fuera de body no se vera afectado por estos estilos*/
+html {
+    color-scheme: dark;
+    font-size: 62.5%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 100vw;
-    position: relative;
-    left: -8px;
-    height: 930px;
 }
 
+/***************************************************HEADER**************************************************/
 header {
-    position: sticky;
-    top: 0;
-    height: 50px;
+    width: 100dvw;
+    height: 60px;
     display: flex;
     flex-direction: row;
-    z-index: 2;
     justify-content: space-between;
-    align-content: center;
     align-items: center;
-    flex-wrap: nowrap;
 }
-
 header .logo {
-    width: 50px;
+    width: 60px;
     height: inherit;
     position: relative;
-    left: calc(3% + 10px);
+    left: calc(1% + 10px);
 }
-
-.barraNavPrincipal .elementos {
+.logo img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 35px;
+    translate: -50% -50%;
+}
+header .barraNavPrincipal {
     visibility: hidden;
 }
-
-/*Edicion del main*/
-
-main {
+header .menu {
+    width: 60px;
     display: flex;
     flex-direction: column;
-    z-index: 1;
-}
-.bienvenida {
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    gap: 8px;
     position: relative;
-    top: -88px;
-    height: 930px;
-    z-index: 1;
+    right: calc(1% +10px);
+}
+.menu span {
+    width: 60%;
+    height: 3px;
+    background-color: white;
+}
+/****************************************************MAIN***************************************************/
+/*Seccion Bienvenida*/
+main .bienvenida {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+.bienvenida .contenedor-fondo {
+    position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
-.contenedor-fondo {
+.contenedor-fondo .fondo {
     position: absolute;
-    height: inherit;
-    width: inherit;
-}
-
-.bienvenida .fondo {
-    position: relative;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
-
 .bienvenida .bloqueTexto {
-    position: relative;
-    width: 300px;
-    height: 150px;
-    top: calc(50% - 75px);
-    left: calc(50vw - 150px);
-    z-index: 2;
-}
-
-.bloqueTexto p {
-    margin: 0;
-}
-
-.bloqueTexto .titulo{
+    position: absolute;
     text-align: center;
+    top: 50%;
+    left: 50%;
+    translate: -50%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bloqueTexto .titulo {
     font-size: 5rem;
-    font-weight: bold;
+    font-weight: 700;
 }
-
 .bloqueTexto .texto {
-    text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
-
-.botonBienvenida {
-    position: relative;
-    top: calc(50vh - 25px);
-    left: calc(50vw - 75px);
-    width: 150px;
-    height: 50px;
-    background-image: linear-gradient(53deg, rgb(109, 0, 103), rgb(226, 28, 193));
+.bloqueTexto .botonBienvenida {
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 2rem;
+    background-image: linear-gradient(var(--angulo-degradado), var(--color-principal), var(--color-secundario));
+    color: aliceblue;
+    width: 80%;
+    max-width: 300px;
+    padding: 10px 0px;
     border-radius: 20px;
-    font-size: 2rem;
-    z-index: 2;
-    opacity: 1;
-    padding: 10px 30px;
 }
-main .introduccion h1{
+/*Seccion Introduccion*/
+main .introduccion {
+    text-align: center;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .introduccion h1 {
+    margin-top: 50px;
+    font-size: 5rem;
+}
+.introduccion .grilla-caracteristicas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 840px;
+    margin-top: 50px;
+}
+.grilla-caracteristicas .cajas {
+    position: relative;
+    width: 90%;
+    max-width: 380px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 25px;
+}
+.cajas h2 {
     font-size: 3rem;
 }
-main .introduccion h2{
+.cajas p {
+    font-size: 1.5rem;
+}
+/*Seccion Personas en el proyecto*/
+main .personasEnElProyecto {
+    margin-top: 50px;
+    width: 100dvw;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.personasEnElProyecto .personas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: inherit;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 20px;
+    color: black;
+}
+.personas .foto {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: url(../assets/fotos/pic1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.personas .nombre {
     font-size: 2rem;
+    font-weight: 700;
 }
-main .introduccion p {
-    font-size: 1rem;
+.personas p {
+    font-size: 1.5rem;
 }
-main .personasEnElProyecto span{
-    font-size: 2rem;
-}
-main .personasEnElProyecto p {
-    font-size: 1rem;
-}
-
-/*FOOTER*/
-
+/***************************************************FOOTER**************************************************/
 footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
+    width: 100dvw;
+    height: 50px
 }
 footer p {
-    margin: 0;
-    font-size: 1rem;
-    padding-left: 1rem;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    font-size: 1rem; 
 }
