@@ -1,105 +1,41 @@
-/********************************************
- *    Property of Alberto Montiel Reyes     *
- *       All rights reserved © 2023         *
- *    Any modifications at this file and    * 
- *      others ones must be aproved and     *
- *    concend by the author, forks are not  *
- * allowed, contact me for more information *
- *                                          *
- ********************************************/
-
-
-*{ /*En esta seccion van todas las variables de estilizado gobales, se aplicaran a cualquier elemento que se cree en el futuro*/
-    font-size: 62.5%;
-    list-style: none;
-    text-decoration: none;
-}
-
-html { /*En esta seccion es el estilizado del documento html, todo lo que compone la pagina, a diferencia del componente * que es global, html tiene mayor prioridad*/
-    color-scheme: dark;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-a { /*Estilizado de todos los componentes tipo hipervinculos, al igual que html, reemplazara todo el estilizado del componente global*/
-    position: relative;
-    color: inherit;
-    text-transform: uppercase;
-    opacity: .7;
-    font-weight: 500;
-}
-
-body { /*Estos son los estilos que se aplicaran unicamente a los elementos dentro del body, es decir, cualquier elemento fuera de body no se vera afectado por estos estilos*/
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 19rem;
-    width: 100vw;
+html {
     overflow-x: hidden;
 }
+/*CABECERA*/
 
-header { /*Estilo de la cabecera del sitio web, tiene una pocision relativa sujera a la cima del sitio web*/
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-}
-header .logo {
-    width: 250px;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-}
-
-.logo span {
-    font-weight: 700;
-    color: whitesmoke;
-}
-
+.barraNavPrincipal,
 .barraNavPrincipal .elementos {
     visibility: visible;
 }
-
-.barraNavPrincipal { /*El elemento de navegacion es relativo al padre*/
-    position: relative;
-    height: inherit;
-    right: 5rem;
+header .menu {
+    display: none;
 }
-
 .barraNavPrincipal ul { /*Esta es la lista con los elementos que se ven en el menu, inicio, acerca de, compras etc, aqui se puede modificar el estilo de esos componentes*/
     --_gap: 2rem;
-
-    margin: 0;
-    height: min-content;
     display: flex;
     flex-wrap: nowrap;
-    align-content: center;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    position: relative;
+    right: calc(6% + 8px);
+}
+.barraNavPrincipal li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
 }
 
 .barraNavPrincipal li { /*Este es el estilo de cada elemento dentro de la lista a diferencia de ul, li modifica cada elemento por separado; ul aplicaria un efecto global lo podria causar crasheos o bugs visuales*/
     position: relative;
-    overflow: hidden;
-    padding: calc(var(--_gap) / 2);
+    padding-inline: calc(var(--_gap) / 2);
 }
 
 .barraNavPrincipal li::after { /*Esta es la barra que aparece debajo de cada elemento, su forma, su color y sus propiedades*/
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0rem;
+    bottom: -1rem;
     height: 3px;
     width: 100%;
     background: plum;
@@ -134,8 +70,6 @@ a:hover, a:focus-visible { /*Definimos la opacidad a 1 del elemento que este sie
 }
 
 /*Estilado del main*/
-
-
 
 
 /*Estilado del footer*/
