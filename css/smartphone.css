@@ -1,3 +1,13 @@
+/********************************************
+ *    Property of Alberto Montiel Reyes     *
+ *       All rights reserved © 2023         *
+ *    Any modifications at this file and    * 
+ *      others ones must be aproved and     *
+ *    concend by the author, forks are not  *
+ * allowed, contact me for more information *
+ *                                          *
+ ********************************************/
+
 *{ /*En esta seccion van todas las variables de estilizado gobales, se aplicaran a cualquier elemento que se cree en el futuro*/
     font-size: 62.5%;
     list-style: none;
@@ -28,32 +38,29 @@ body { /*Estos son los estilos que se aplicaran unicamente a los elementos dentr
 }
 
 header {
-    position: relative;
-    height: 80px;
+    position: sticky;
+    top: 0;
+    height: 50px;
     display: flex;
     flex-direction: row;
     z-index: 2;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 header .logo {
-    display: flex;
-    flex-direction: row;
-    width: 200px;
-    font-size: 6rem;
-    align-items: center;
-    justify-content: space-evenly;
-    align-content: center;
-    flex-wrap: nowrap;
-}
-.logo img {
     width: 50px;
+    height: inherit;
+    position: relative;
+    left: calc(3% + 10px);
 }
-.logo span {
-    color: aliceblue;
-}
+
 .barraNavPrincipal .elementos {
     visibility: hidden;
 }
+
 /*Edicion del main*/
 
 main {
@@ -61,7 +68,7 @@ main {
     flex-direction: column;
     z-index: 1;
 }
-.advertencia {
+.bienvenida {
     position: relative;
     top: -88px;
     height: 930px;
@@ -74,25 +81,71 @@ main {
     width: inherit;
 }
 
-.advertencia .fondo {
+.bienvenida .fondo {
     position: relative;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
 
-.advertencia .textoAdvertencia {
+.bienvenida .bloqueTexto {
     position: relative;
-    top: 40%;
+    width: 300px;
+    height: 150px;
+    top: calc(50% - 75px);
+    left: calc(50vw - 150px);
     z-index: 2;
+}
+
+.bloqueTexto p {
+    margin: 0;
+}
+
+.bloqueTexto .titulo{
     text-align: center;
     font-size: 5rem;
     font-weight: bold;
 }
 
+.bloqueTexto .texto {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.botonBienvenida {
+    position: relative;
+    top: calc(50vh - 25px);
+    left: calc(50vw - 75px);
+    width: 150px;
+    height: 50px;
+    background-image: linear-gradient(53deg, rgb(109, 0, 103), rgb(226, 28, 193));
+    border-radius: 20px;
+    font-size: 2rem;
+    z-index: 2;
+    opacity: 1;
+    padding: 10px 30px;
+}
+main .introduccion h1{
+    font-size: 3rem;
+}
+main .introduccion h2{
+    font-size: 2rem;
+}
+main .introduccion p {
+    font-size: 1rem;
+}
+main .personasEnElProyecto span{
+    font-size: 2rem;
+}
+main .personasEnElProyecto p {
+    font-size: 1rem;
+}
+
+/*FOOTER*/
+
 footer {
     position: relative;
-    top: -50px;
+    bottom: 0;
     width: 100%;
     height: 50px;
 }
